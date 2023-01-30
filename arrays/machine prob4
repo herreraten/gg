@@ -1,0 +1,96 @@
+import java.util.Scanner;
+
+/**
+ *
+ * @author herreracc
+ */
+public class MACHINEPROB4_HERRERA {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner sc = new Scanner(System.in);
+
+
+
+    System.out.print("Enter the quantity of arrays: ");
+
+    int numArrays = sc.nextInt();
+
+
+
+    System.out.print("Enter the size of each array: ");
+
+    int size = sc.nextInt();
+
+
+
+    int[][] arrays = new int[numArrays][size];
+
+    int globalMin = Integer.MAX_VALUE;
+
+    int globalMax = Integer.MIN_VALUE;
+
+
+
+    for (int i = 0; i < numArrays; i++) {
+
+      int localMin = Integer.MAX_VALUE;
+
+      int localMax = Integer.MIN_VALUE;
+
+
+
+      System.out.println("Enter elements for array " + (i + 1) + ":");
+
+      for (int j = 0; j < size; j++) {
+
+        arrays[i][j] = sc.nextInt();
+
+
+
+        if (arrays[i][j] < localMin) {
+
+          localMin = arrays[i][j];
+
+        }
+
+        if (arrays[i][j] > localMax) {
+
+          localMax = arrays[i][j];
+
+        }
+
+      }
+
+
+
+      if (localMin < globalMin) {
+
+        globalMin = localMin;
+
+      }
+
+      if (localMax > globalMax) {
+
+        globalMax = localMax;
+
+      }
+
+
+
+      System.out.println("Array " + (i + 1) + ": Min: " + localMin + " Max: " + localMax);
+
+    }
+
+
+
+    System.out.println("Min: " + globalMin + " Max: " + globalMax);
+
+    sc.close();
+
+  }
+
+}
