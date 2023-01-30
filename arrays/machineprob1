@@ -1,0 +1,79 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package mprob1_herrera;
+
+import static java.lang.System.out;
+import java.util.Scanner;
+
+/**
+ *
+ * @author herreracc
+ */
+public class MPROB1_HERRERA {
+
+    /**
+     * @param args the command line arguments
+     */
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+
+
+        System.out.print("Enter the quantity of arrays: ");
+
+        int quantity = input.nextInt();
+
+
+
+        System.out.print("Enter the size of each array: ");
+
+        int size = input.nextInt();
+
+
+
+        int[][] data = new int[quantity][size];
+
+
+
+        for (int i = 0; i < quantity; i++) {
+
+            System.out.println("Enter elements for array " + (i + 1) + ":");
+
+            for (int j = 0; j < size; j++) {
+
+                System.out.print("Enter element for array[" + (i + 1) + "][" + (j + 1) + "]: ");
+
+                data[i][j] = input.nextInt();
+
+            }
+
+        }
+
+
+
+        System.out.println("Output:");
+
+        for (int i = 0; i < quantity; i++) {
+
+            System.out.print("Array " + (i + 1) + ": ");
+
+            for (int j = 0; j < size; j++) {
+
+                System.out.print(data[i][j] + ", ");
+
+            }
+
+            System.out.println();
+
+        }
+
+        input.close();
+
+    }
+
+}
